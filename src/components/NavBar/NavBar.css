@@ -1,0 +1,3 @@
+.navBarWrapper {
+  @apply bg-black flex gap-4  text-white  justify-center  pb-4 mb-10;
+}

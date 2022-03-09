@@ -1,0 +1,7 @@
+.issuesWrapper {
+  @apply bg-gray-300;
+}
+
+.issuesTitle {
+  @apply flex justify-center text-xl font-bold pb-1.5 pt-1.5;
+}
