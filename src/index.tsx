@@ -4,9 +4,28 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  useQuery,
+  gql
+} from "@apollo/client";
+import { BrowserRouter } from 'react-router-dom';
+
+const client = new ApolloClient({
+  uri: 'https://api.github.com/graphql',
+  cache: new InMemoryCache(),
+  headers:{"Authorization": "Bearer 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"}
+});
+
 ReactDOM.render(
   <React.StrictMode>
+     <BrowserRouter>
+    <ApolloProvider client={client}>
     <App />
+    </ApolloProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,0 +1,18 @@
+.issueWrapper {
+    @apply bg-gray-50 m-7 px-2 py-1  rounded-full;
+  }
+
+  .issueTitle {
+    @apply  font-bold text-red-400 ;
+  }
+  
+  .createInfoBtn {
+    @apply flex justify-end mb-5 mr-3  gap-2;
+  }
+  
+  .createInfoBtn > .infoButton {
+    @apply bg-blue-600 text-white text-center w-16 h-10 rounded-lg px-1 py-1 justify-items-end;
+  }
+  
+
+  
