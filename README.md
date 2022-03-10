@@ -1,4 +1,4 @@
-# Homelike
+# Homelike [![Netlify Status](https://api.netlify.com/api/v1/badges/3b6302c7-3c6f-49e0-99f9-4e7f189b6516/deploy-status)](https://app.netlify.com/sites/modest-leakey-0e1b16/deploys) [![Known Vulnerabilities](https://snyk.io/test/github/basilisSam/Homelike/badge.svg)](https://snyk.io/test/github/basilisSam/Homelike)
 
 This is a project done for Homelike interview. 
 
