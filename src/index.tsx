@@ -16,7 +16,7 @@ import { BrowserRouter } from 'react-router-dom';
 const client = new ApolloClient({
   uri: 'https://api.github.com/graphql',
   cache: new InMemoryCache(),
-  headers:{"Authorization": "Bearer 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"}
+  headers:{"Authorization": "Bearer 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"}
 });
 
 ReactDOM.render(

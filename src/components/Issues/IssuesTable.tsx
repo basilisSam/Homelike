@@ -1,9 +1,17 @@
 import { Issue } from "../Issue/Issue";
 import "./IssuesTable.css";
 
-function Issues({issues}:any) {
+function Issues({issues,handleStateChange,issueState}:any) {
     return (
               <div className="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 pr-10 lg:px-8">
+                <button onClick={() => handleStateChange("OPEN")} className={
+  issueState==="OPEN" ? "active" : "NotActive" 
+}>Open</button>
+                <button className={
+  issueState==="CLOSED" ? "active" : "NotActive" 
+}
+ onClick={() => handleStateChange("CLOSED")} >Closed</button>
+
                     <div className="align-middle rounded-tl-lg rounded-tr-lg inline-block w-full py-4 overflow-hidden bg-white shadow-lg px-12">
                         <div className="flex justify-between">
                             <div className="inline-flex border rounded w-7/12 px-2 lg:px-6 h-12 bg-transparent">

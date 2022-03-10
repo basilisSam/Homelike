@@ -6,18 +6,26 @@ import "./Home.css";
 
 function Home() {
   const [issues, setIssues] = useState([]);
-  const { loading, error, data } = useQuery(GET_ISSUES);
+  const [issueState, setIssueState] = useState("OPEN");
+
+  const { loading, error, data } = useQuery(GET_ISSUES,{
+    variables: { state: issueState },
+  });
+
+  const handleStateChange = (state:string) => {
+    setIssueState(state);
+  }
 
 
   useEffect(() => {
    if(data){
      setIssues(data.repository.issues.edges)
    }
-  },[data]);
+  },[data,issueState]);
 
     return (
       <div className='homeWrapper'>
-          <Issues issues={issues}/>
+          <Issues issues={issues} handleStateChange={handleStateChange} issueState={issueState}/>
       </div>
     );
   }

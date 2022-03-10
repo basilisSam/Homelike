@@ -1,9 +1,9 @@
 import { gql } from "@apollo/client"
 
 const GET_ISSUES = gql`
-query {
+query GET_ISSUES($state:[IssueState!]){
   repository(owner:"reactjs", name:"reactjs.org") {
-    issues(last:100) {
+    issues(last:100, states: $state) {
       edges {
         node {
           number
