@@ -1,4 +1,4 @@
-# Homelike [![Netlify Status](https://api.netlify.com/api/v1/badges/3b6302c7-3c6f-49e0-99f9-4e7f189b6516/deploy-status)](https://app.netlify.com/sites/modest-leakey-0e1b16/deploys) [![Known Vulnerabilities](https://snyk.io/test/github/basilisSam/Homelike/badge.svg)](https://snyk.io/test/github/basilisSam/Homelike)
+# Homelike [![Netlify Status](https://api.netlify.com/api/v1/badges/3b6302c7-3c6f-49e0-99f9-4e7f189b6516/deploy-status)](https://app.netlify.com/sites/modest-leakey-0e1b16/deploys) [![Known Vulnerabilities](https://snyk.io/test/github/basilisSam/Homelike/badge.svg)](https://snyk.io/test/github/basilisSam/Homelike) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/db399f123ac142dca21f76a93341ee77)](https://www.codacy.com/gh/basilisSam/Homelike/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=basilisSam/Homelike&amp;utm_campaign=Badge_Grade)
 
 This is a project done for Homelike interview. 
 
