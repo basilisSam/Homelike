@@ -1,46 +1,68 @@
-# Getting Started with Create React App
+# Homelike
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a project done for Homelike interview. 
 
-## Available Scripts
+You can find the kanban board of this project [here](https://github.com/basilisSam/Homelike/projects/2).
 
-In the project directory, you can run:
+## Teck Stack
 
-### `npm start`
+The project is build with [React](https://reactjs.org/) and [Typescript](https://www.typescriptlang.org/). It uses [jest](https://jestjs.io/) and [testing-library](https://testing-library.com/) for testing. It also uses [Tailwind CSS](https://tailwindcss.com/) for styling.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+For continuous integration and continuous deployment it uses [Netlify CI/CD](https://www.netlify.com/). The project has been deployed here: https://vasilis-aircall.netlify.app/
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The project is also using [Snyk](https://snyk.io/) for security vulnerabilities, and [Codacy](https://www.codacy.com/) for code static analysis.
 
-### `npm test`
+### Run it locally
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the project on your local machine. <br/>
+   `$ git clone https://github.com/basilisSam/Homelike.git`
 
-### `npm run build`
+1. Navigate to the project folder and install the dependencies with the following command. <br/>
+   `$ npm install`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Run the application locally (the application can be accessed from [localhost:3000](http://localhost:3000/)) <br/>
+   `$ npm run start`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Login by inserting a text to both username & password fields (as long as you enter something login will be successful) <br/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Available scripts
 
-### `npm run eject`
+#### Run app locally
+You can run the application locally by using `npm run start`.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Test
+You can run the tests of the application with `npm run test`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Test with watch
+You can run the tests of the application and enable watching for any updates with `npm run test:watch`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Test with coverage
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+You can run the tests of the application and generate a coverage report with `npm run test:coverage`
 
-## Learn More
+The report can be found in the `/coverage/` folder.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Lint
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can lint the project with `npm run lint`
+
+#### Lint with fix
+
+You can lint the project and attempt to fix issues with `npm run lint-fix`
+
+#### Build
+
+You can build the application in production mode with `npm run build`
+
+#### Build production
+
+You can build the application in production mode, run tests and lint the project with `npm run build:prod`
+
+> **Note:** You can use `yarn` instead of `npm`
+
+### CI/CD
+The following steps are running when a commit is made to `main` branch:
+1. Triggers a build pipeline
+1. Lint code
+1. Run tests
+1. Build project 
