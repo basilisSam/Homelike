@@ -12,7 +12,8 @@ export function Issue({issueData}: any ) {
         </div>
     </td>
     <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-        <div className="text-sm leading-5 text-blue-900">{issueData.title}</div>
+        <div className="text-md leading-5 text-gray-800 font-bold">{issueData.title}</div>
+        <div className="text-xs leading-5 text-gray-400 font-bold">Created at: {issueData.createdAt}</div>
     </td>
     
     <td className="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">

@@ -24,7 +24,7 @@ function Home() {
   },[data,issueState]);
 
     return (
-      <div className='homeWrapper'>
+      <div className='homeWrapper pt-8'>
           <Issues issues={issues} handleStateChange={handleStateChange} issueState={issueState}/>
       </div>
     );

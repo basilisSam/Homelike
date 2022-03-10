@@ -16,10 +16,10 @@ function IssueDetails() {
       setIssue(data.repository.issue);
     }
   }, [data]);
-
+ 
   return (
     <>
-      {issue  && (
+      {/* {issue  && (
         <>
           <h1>{issue.title}</h1>
           <h1> {issue.body}</h1>
@@ -28,7 +28,21 @@ function IssueDetails() {
             <IssueComment comment={node.node} key={node.node.id} />
           )))}
         </>
-      )}
+      )} */}
+
+      <div className="flex justify-center ">
+        <div className="container px-6 py-10 mx-auto w-1/2 bg-white shadow-xl rounded-lg my-20">
+          <div className="flex gap-2">
+            <h2 className="text-gray-800 text-3xl">{issue.title} #{issue.number}</h2>
+          </div>
+          <p className="mt-2 text-gray-600 pt-6">{issue.body}</p>
+        </div>
+      </div>
+
+      {issue.comments &&
+        issue.comments.edges.map((node: any) => (
+          <IssueComment comment={node.node} key={node.node.id} />
+        ))}
     </>
   );
 }

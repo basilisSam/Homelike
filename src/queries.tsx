@@ -3,9 +3,11 @@ import { gql } from "@apollo/client"
 const GET_ISSUES = gql`
 query GET_ISSUES($state:[IssueState!]){
   repository(owner:"reactjs", name:"reactjs.org") {
-    issues(last:100, states: $state) {
+    issues(last:3, states: $state) {
       edges {
         node {
+          createdAt
+          closedAt 
           number
           title
         }
@@ -21,7 +23,7 @@ query GET_ISSUE($issueNumber: Int!) {
             title
            body
             number
-            comments(first:10) {
+            comments(first:2) {
               edges{
                   node{
                       id
