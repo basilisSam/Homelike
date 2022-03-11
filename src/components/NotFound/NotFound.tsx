@@ -1,6 +1,8 @@
+import Information from "../Information/Information";
+
 function NotFound() {
     return (
-        <div>Page not found! :( </div>
+        <Information title="404" description="Sorry we couldn't find this page."/>
     );
   }
   

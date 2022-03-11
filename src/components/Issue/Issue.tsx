@@ -1,19 +1,21 @@
 import { Link } from "react-router-dom";
 import "./Issue.css";
 
-export function Issue({issueData}: any ) {
+export function Issue({issueData,issueState}: any ) {
   return (
     <tr>
     <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
         <div className="flex items-center">
             <div>
-                <div className="text-sm leading-5 text-gray-800">{issueData.number}</div>
+                <div className="text-sm leading-5 text-gray-800">#{issueData.number}</div>
             </div>
         </div>
     </td>
     <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
         <div className="text-md leading-5 text-gray-800 font-bold">{issueData.title}</div>
-        <div className="text-xs leading-5 text-gray-400 font-bold">Created at: {issueData.createdAt}</div>
+        <div className="text-xs leading-5 text-gray-400 font-bold">
+            {issueState === "OPEN" ? `Created at: ${issueData.createdAt}` : `Closed at: ${issueData.closedAt}`}
+            </div>
     </td>
     
     <td className="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">

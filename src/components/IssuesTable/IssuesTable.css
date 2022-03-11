@@ -1,0 +1,15 @@
+.issuesWrapper {
+  @apply bg-gray-300;
+}
+
+.issuesTitle {
+  @apply flex justify-center text-xl font-bold pb-1.5 pt-1.5;
+}
+
+.active {
+  @apply px-3 py-1 mr-1 border-blue-500 border text-blue-500 rounded transition duration-300 bg-blue-700 text-white text-sm focus:outline-none
+}
+
+.NotActive {
+  @apply px-3 py-1 mr-1 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white text-sm focus:outline-none
+}
