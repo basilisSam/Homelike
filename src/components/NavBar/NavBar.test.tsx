@@ -1,6 +1,5 @@
-import React from "react";
-import { cleanup, render, screen } from "@testing-library/react";
-import { afterEach, it } from "@jest/globals";
+import { render, screen } from "@testing-library/react";
+import { it } from "@jest/globals";
 import { MemoryRouter } from "react-router-dom";
 import NavBar from "./NavBar";
 ;

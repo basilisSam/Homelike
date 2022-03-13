@@ -1,9 +1,10 @@
 import { gql } from "@apollo/client"
 
 const GET_ISSUES = gql`
-query GET_ISSUES($state:[IssueState!]){
+query GET_ISSUES($state:[IssueState!],$first:Int!,$after:String){
   repository(owner:"reactjs", name:"reactjs.org") {
-    issues(last:3, states: $state) {
+    issues(first:$first, after:$after, states: $state) {
+      totalCount
       edges {
         node {
           createdAt
@@ -11,6 +12,33 @@ query GET_ISSUES($state:[IssueState!]){
           number
           title
         }
+        cursor
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+}`
+
+const GET_UPDATE_ISSUES = gql`
+query GET_ISSUES($state:[IssueState!],$first:Int!,$after:String){
+  repository(owner:"reactjs", name:"reactjs.org") {
+    issues(first:$first, after:$after, states: $state) {
+      totalCount
+      edges {
+        node {
+          createdAt
+          closedAt 
+          number
+          title
+        }
+        cursor
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
       }
     }
   }
@@ -28,6 +56,7 @@ query GET_ISSUE($issueNumber: Int!) {
                   node{
                       id
                       body  
+                      publishedAt
                   }
               }
             }
@@ -38,5 +67,6 @@ query GET_ISSUE($issueNumber: Int!) {
 
 export {
     GET_ISSUES,
-    GET_ISSUE
+    GET_ISSUE,
+    GET_UPDATE_ISSUES
 }
