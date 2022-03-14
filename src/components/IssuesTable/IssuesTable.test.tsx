@@ -45,6 +45,6 @@ it('should render multiple child components', () => {
     </MemoryRouter>);
 
 
-    screen.getByText("2017");
+    screen.getByText("Homelike");
     
 });
