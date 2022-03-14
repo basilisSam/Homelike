@@ -37,6 +37,6 @@ it('should render multiple child components', () => {
 
     screen.getByText("#1");
     screen.getByText("#2");
-    screen.findByText("Created at: 2017");
-    screen.findByText("Created at: 2018");
+    screen.getByText("Created at: 2017 24:00:00");
+    screen.getByText("Created at: 2018 24:00:00");
 });

@@ -1,4 +1,4 @@
-import {Data, Issue, IssueProps} from "../Issue/Issue";
+import {Issue} from "../Issue/Issue";
 import "./IssuesTable.css";
 import ReactPaginate from "react-paginate";
 

@@ -1,4 +1,4 @@
-import {cleanup, getByText, render, waitFor} from "@testing-library/react";
+import {cleanup, render, waitFor,screen} from "@testing-library/react";
 import {it} from "@jest/globals";
 import Router, {MemoryRouter} from "react-router-dom";
 import IssueDetails from "./IssueDetails";
@@ -24,7 +24,7 @@ it("should render error when issue not found", async () => {
         },
     };
 
-    const {getByText} = render(
+    render(
         <MemoryRouter>
             <MockedProvider mocks={[mocks]} addTypename={false}>
                 <IssueDetails/>
@@ -33,7 +33,7 @@ it("should render error when issue not found", async () => {
     );
 
     await waitFor(() => {
-        getByText("Issue not found!");
+        screen.getByText("Issue not found!");
     });
 });
 
@@ -49,7 +49,7 @@ it("should render open state if issue is open", async () => {
         },
     };
 
-    const {getByText} = render(
+    render(
         <MemoryRouter>
             <MockedProvider mocks={[mocks]} addTypename={false}>
                 <IssueDetails/>
@@ -58,7 +58,7 @@ it("should render open state if issue is open", async () => {
     );
 
     await waitFor(() => {
-        getByText("Open");
+        screen.getByText("Open");
     });
 });
 
@@ -73,7 +73,7 @@ it("should render closed state if issue is closed", async () => {
         },
     };
 
-    const {getByText} = render(
+    render(
         <MemoryRouter>
             <MockedProvider mocks={[mocks]} addTypename={false}>
                 <IssueDetails/>
@@ -82,6 +82,6 @@ it("should render closed state if issue is closed", async () => {
     );
 
     await waitFor(() => {
-        getByText("Closed");
+        screen.getByText("Closed");
     });
 });

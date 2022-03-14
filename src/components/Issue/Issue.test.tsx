@@ -47,7 +47,7 @@ it("should render issue with created at description", () => {
         </MemoryRouter>
     );
 
-    screen.findByText("Created at: 2021");
+    screen.getByText("Created at: 2021 24:00:00")
 });
 
 it("should render issue with closed at description", () => {
@@ -69,6 +69,5 @@ it("should render issue with closed at description", () => {
             </table>
         </MemoryRouter>
     );
-
-    screen.findByText("Closed at: 2022");
+    screen.getByText("Closed at: 2022 24:00:00")
 });
