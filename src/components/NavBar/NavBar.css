@@ -1,3 +1,11 @@
 .navBarWrapper {
   @apply bg-gray-800 flex gap-4  text-white  justify-start  pb-1.5 mb-10;
 }
+
+.navBarBrand {
+  @apply m-2 py-1 rounded-full text-white font-semibold text-justify flex  w-max;
+}
+
+.navBarBrand p {
+  @apply mt-0.5;
+}
