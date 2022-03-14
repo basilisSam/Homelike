@@ -77,7 +77,7 @@ function IssuesTable(issuesTableData: IssuesTableData) {
               breakLinkClassName="page-link"
               containerClassName="pagination"
               activeClassName="active"
-              className="flex justify-around w-1/3"
+              className="flex justify-around w-1/2"
             />
         </div>
       </div>
