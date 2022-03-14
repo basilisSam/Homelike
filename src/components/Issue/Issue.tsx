@@ -13,6 +13,14 @@ export interface Data {
   closedAt: string | undefined;
 }
 
+function generateDate(date: string) {
+  const time = new Date(date).toLocaleTimeString("en", {
+    timeStyle: "medium",
+    hour12: false,
+  });
+  return `${date.substring(0, 10)} ${time}`;
+}
+
 export function Issue(issue: IssueData) {
   return (
     <tr>
@@ -31,7 +39,7 @@ export function Issue(issue: IssueData) {
         </div>
         <div className="text-xs leading-5 text-gray-400 font-bold">
           {issue.issueState === "OPEN"
-            ? `Created at: ${issue.issueData.createdAt}`
+            ? `Created at: ${generateDate(issue.issueData.createdAt)}`
             : `Closed at: ${issue.issueData.closedAt}`}
         </div>
       </td>

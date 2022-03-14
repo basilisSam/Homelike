@@ -4,14 +4,14 @@ export interface CommentData {
 }
 
 export function IssueComment(comment: CommentData) {
-  const issueDate = comment.publishedAt;
-
-  const time = new Date(issueDate).toLocaleTimeString("en", {
-    timeStyle: "medium",
-    hour12: false,
-  });
-
-  const date = issueDate.substring(0, 10);
+  
+  function generateDate(date: string) {
+    const time = new Date(date).toLocaleTimeString("en", {
+      timeStyle: "medium",
+      hour12: false,
+    });
+    return `${date.substring(0, 10)} ${time}`;
+  }
 
   return (
     <>
@@ -31,7 +31,7 @@ export function IssueComment(comment: CommentData) {
                 </p>
               </div>
               <p className="text-gray-400 text-sm">
-                {date} {time}
+              {generateDate(comment.publishedAt)}
               </p>
             </div>
           </div>

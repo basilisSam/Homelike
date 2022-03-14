@@ -78,6 +78,7 @@ function IssuesTable(issuesTableData: IssuesTableData) {
               containerClassName="pagination"
               activeClassName="active"
               className="flex justify-around w-1/2 rounded-sm border-2 border-indigo-500/75"
+              
             />
         </div>
       </div>
