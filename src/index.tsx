@@ -21,7 +21,7 @@ const client = new ApolloClient({
             }
         }
     }),
-    headers: {"Authorization": "Bearer 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"}
+    headers: {"Authorization": "Bearer " + process.env.REACT_APP_NOT_SECRET_CODE}
 });
 
 ReactDOM.render(
