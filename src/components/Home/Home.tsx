@@ -22,14 +22,14 @@ function Home() {
 
                 return newEdges.length
                     ? {
-                        repository: {
-                            issues: {
-                                totalCount: previousResult.repository.issues.totalCount,
-                                edges: previousResult.repository.issues.edges,
-                                pageInfo
-                            }
+                            repository: {
+                                issues: {
+                                    totalCount: previousResult.repository.issues.totalCount,
+                                    edges: fetchMoreResult.repository.issues.edges,
+                                    pageInfo
+                                }
 
-                        }
+                            }
                     }
                     : previousResult;
             }
@@ -42,7 +42,6 @@ function Home() {
         data,
         fetchMore
     } = useQuery(GET_ISSUES, {
-        fetchPolicy:'network-only',
         variables: {state: issueState, first: PAGE_COUNT, after: null}
     });
 
