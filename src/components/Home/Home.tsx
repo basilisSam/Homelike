@@ -1,67 +1,72 @@
-import {useLazyQuery, useQuery} from "@apollo/client";
+import {useQuery} from "@apollo/client";
 import {useEffect, useState} from "react";
 import {GET_ISSUES} from "../../queries";
 import "./Home.css";
 import Spinner from "../Spinner/Spinner";
 import IssuesTable from "../IssuesTable/IssuesTable";
+import Information from "../Information/Information";
 
 function Home() {
 
     const PAGE_COUNT = 7
-
     const [issueState, setIssueState] = useState("OPEN");
-    const [currentIssues, setCurrentIssues] = useState([]);
-    const [pageCount, setPageCount] = useState(0);
-    const [endCursor, setEndCursor] = useState("");
 
-    const handlePageClick = (event: any) => {
-        getNewIssues();
+    const handlePageClick = () => {
+        fetchMore({
+            variables: {
+                after: data.repository.issues.pageInfo.endCursor
+            },
+            updateQuery: (previousResult: any, {fetchMoreResult}: any) => {
+                const newEdges = fetchMoreResult.repository.issues.edges;
+                const pageInfo = fetchMoreResult.repository.issues.pageInfo;
+
+                return newEdges.length
+                    ? {
+                        repository: {
+                            issues: {
+                                totalCount: previousResult.repository.issues.totalCount,
+                                edges: previousResult.repository.issues.edges,
+                                pageInfo
+                            }
+
+                        }
+                    }
+                    : previousResult;
+            }
+        })
     };
 
-    const {loading, data} = useQuery(GET_ISSUES, {
-        variables: {state: issueState, first: PAGE_COUNT},
+    const {
+        loading,
+        error,
+        data,
+        fetchMore
+    } = useQuery(GET_ISSUES, {
+        fetchPolicy:'network-only',
+        variables: {state: issueState, first: PAGE_COUNT, after: null}
     });
-
-    const [getNewIssues, {data: newData}] = useLazyQuery(GET_ISSUES, {
-        variables: {state: issueState, first: PAGE_COUNT, after: endCursor}
-    });
-
 
     const handleStateChange = (state: string) => {
-        console.log("handleStateChange")
         setIssueState(state);
     };
-
-    useEffect(() => {
-        if (data) {
-            setCurrentIssues(data.repository.issues.edges)
-            setPageCount(Math.ceil(data.repository.issues.totalCount / PAGE_COUNT));
-            setEndCursor(data.repository.issues.pageInfo.endCursor);
-        }
-    }, [data, issueState]);
-
-    useEffect(() => {
-        if (newData) {
-            setCurrentIssues(newData.repository.issues.edges)
-            setPageCount(
-                Math.ceil(newData.repository.issues.totalCount / PAGE_COUNT)
-            );
-            setEndCursor(newData.repository.issues.pageInfo.endCursor);
-        }
-    }, [newData, issueState]);
 
     return (
         <>
             {loading ? (
                 <Spinner/>
+            ) : error ? (
+                <Information
+                    title="Issue not found!"
+                    description="Sorry there is no such data.repository.issue."
+                />
             ) : (
                 <div className="homeWrapper pt-8">
                     <IssuesTable
                         handleStateChange={handleStateChange}
                         issueState={issueState}
                         handlePageClick={handlePageClick}
-                        pageCount={pageCount}
-                        currentIssues={currentIssues}
+                        pageCount={Math.ceil(data.repository.issues.totalCount / PAGE_COUNT)}
+                        currentIssues={data.repository.issues.edges}
                     />
                 </div>
             )}
