@@ -8,7 +8,7 @@ You can find the kanban board of this project [here](https://github.com/basilisS
 
 The project is build with [React](https://reactjs.org/) and [Typescript](https://www.typescriptlang.org/). It uses [jest](https://jestjs.io/) and [testing-library](https://testing-library.com/) for testing. It also uses [Tailwind CSS](https://tailwindcss.com/) for styling.
 
-For continuous integration and continuous deployment it uses [Netlify CI/CD](https://www.netlify.com/). The project has been deployed here: https://vasilis-aircall.netlify.app/
+For continuous integration and continuous deployment it uses [Netlify CI/CD](https://www.netlify.com/). The project has been deployed here: https://homelike-test.netlify.app/
 
 The project is also using [Snyk](https://snyk.io/) for security vulnerabilities, and [Codacy](https://www.codacy.com/) for code static analysis.
 
