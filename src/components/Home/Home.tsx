@@ -56,8 +56,8 @@ function Home() {
                 <Spinner/>
             ) : error ? (
                 <Information
-                    title="Issue not found!"
-                    description="Sorry there is no such data.repository.issue."
+                    title="An error occurred!"
+                    description="Probably the personal access token has expired, sorry for the inconvenience!"
                 />
             ) : (
                 <div className="homeWrapper pt-8">
