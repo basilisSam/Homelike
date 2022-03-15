@@ -1,5 +1,5 @@
 import {useQuery} from "@apollo/client";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {GET_ISSUES} from "../../queries";
 import "./Home.css";
 import Spinner from "../Spinner/Spinner";
