@@ -1,6 +1,4 @@
-# Homelike [![Netlify Status](https://api.netlify.com/api/v1/badges/23134d99-093a-4f00-8962-6e535397eab0/deploy-status)](https://app.netlify.com/sites/homelike-test/deploys) [![Known Vulnerabilities](https://snyk.io/test/github/basilisSam/Homelike/badge.svg)](https://snyk.io/test/github/basilisSam/Homelike) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/db399f123ac142dca21f76a93341ee77)](https://www.codacy.com/gh/basilisSam/Homelike/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=basilisSam/Homelike&amp;utm_campaign=Badge_Grade)
-
-This is a project done for Homelike interview. 
+# Github-Issues [![Netlify Status](https://api.netlify.com/api/v1/badges/23134d99-093a-4f00-8962-6e535397eab0/deploy-status)](https://app.netlify.com/sites/homelike-test/deploys) [![Known Vulnerabilities](https://snyk.io/test/github/basilisSam/Homelike/badge.svg)](https://snyk.io/test/github/basilisSam/Homelike) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/db399f123ac142dca21f76a93341ee77)](https://www.codacy.com/gh/basilisSam/Homelike/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=basilisSam/Homelike&amp;utm_campaign=Badge_Grade)
 
 You can find the kanban board of this project [here](https://github.com/basilisSam/Homelike/projects/2).
 
@@ -15,7 +13,7 @@ The project is also using [Snyk](https://snyk.io/) for security vulnerabilities,
 ### Run it locally
 
 1. Clone the project on your local machine. <br/>
-   `$ git clone https://github.com/basilisSam/Homelike.git`
+   `$ git clone https://github.com/basilisSam/Github-Issues.git`
 
 1. Navigate to the project folder and install the dependencies with the following command. <br/>
    `$ npm install`
