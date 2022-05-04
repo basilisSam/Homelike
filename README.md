@@ -1,4 +1,7 @@
 # Github-Issues [![Netlify Status](https://api.netlify.com/api/v1/badges/23134d99-093a-4f00-8962-6e535397eab0/deploy-status)](https://app.netlify.com/sites/github-issues-prj/deploys) [![Known Vulnerabilities](https://snyk.io/test/github/basilisSam/Homelike/badge.svg)](https://snyk.io/test/github/basilisSam/Homelike) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/db399f123ac142dca21f76a93341ee77)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=basilisSam/Github-Issues&amp;utm_campaign=Badge_Grade)
+The project shows the github issues of the Reactjs project.
+It contains pagination, filtering `Open` & `Closed` issues and comments for every issue.
+It also contains a detailed view by selecting an issue giving more information to the user regarding the issue selected.
 
 You can find the kanban board of this project [here](https://github.com/basilisSam/Github-Issues/projects/2).
 
