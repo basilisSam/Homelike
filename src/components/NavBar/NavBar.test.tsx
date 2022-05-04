@@ -12,6 +12,6 @@ it("should render the brand name in the Navbar", () => {
         </MemoryRouter>
     );
 
-    screen.getByText("Homelike");
+    screen.getByText("Github-Issues");
 });
   

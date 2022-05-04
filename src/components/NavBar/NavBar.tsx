@@ -8,7 +8,7 @@ function NavBar() {
             <Link to='/'>
                 <span className='navBarBrand'>
                     <HomeOutlined/>
-                    <p>Homelike</p>
+                    <p>Github-Issues</p>
                 </span>
             </Link>
         </div>
